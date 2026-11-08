@@ -53,20 +53,20 @@ def new_world(name=None, seed=None):
     seed = seed if seed is not None else int(time.time() * 1000) & 0xFFFFFFFF
     now = time.strftime('%Y-%m-%dT%H:%M:%S')
     data = {
-        'version': 1,
+        'version': 2,
         'name': name or f'Новый мир {idx}',
         'created': now,
         'last_played': now,
         'seed': seed,
         'gamemode': 'survival',
         'player': {
-            'x': 0.5, 'y': 64.0, 'z': 0.5,
+            'x': 40.5, 'y': 46.0, 'z': 40.5,
             'yaw': 0.0, 'pitch': 0.0,
             'hp': 20, 'hunger': 20,
         },
         'world': {
             'time': 1000,
-            'chunks': {},
+            'blocks': None,
         },
     }
     _write(idx, data)
